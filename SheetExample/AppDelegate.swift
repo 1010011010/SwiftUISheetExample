@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  SheetExample
-//
-//  Created by Ilja Modrau on 13.04.20.
-//  Copyright © 2020 Hahn & Modrau. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
