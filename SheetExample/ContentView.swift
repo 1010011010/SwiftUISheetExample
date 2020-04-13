@@ -9,8 +9,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isAddPresented = false
+    
+    
     var body: some View {
-        Text("Hello, World!")
+        
+        NavigationView {
+            Text("Tap plus to add item")
+                .navigationBarTitle("Main Screen Title")
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        self.isAddPresented = true
+                    }) {
+                        Image(systemName: "plus")
+                    }
+            )
+                .sheet(isPresented: $isAddPresented,
+                       onDismiss: {
+                        self.isAddPresented = false
+                }) {
+                    NavigationView {
+                        Text("Tap on save")
+                            .navigationBarTitle("Add something")
+                            .navigationBarItems(leading: Button(action: {self.isAddPresented = false}, label: {Text("Save")}))
+                        
+                    }
+            }
+        }
     }
 }
 
